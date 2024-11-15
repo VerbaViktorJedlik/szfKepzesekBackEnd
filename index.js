@@ -1,7 +1,7 @@
 require("dotenv").config();
 
 const express = require("express");
-const routes = require("./routes/routes");
+const trainingRoutes = require("./routes/trainingRoutes");
 
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", true);
@@ -31,7 +31,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use("/api", routes);
+app.use("/trainings", trainingRoutes);
 
 app.listen(3000, () => {
   console.log(`Server Started at ${3000}`);
