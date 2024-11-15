@@ -2,7 +2,7 @@
 // @route  GET /api/trainings
 // @access Public
 exports.getTrainings = (req, res, next) => {
-    res.status(200).json({ success: true, msg: "Show all trainings" });
+    res.status(200).json({ success: true, msg: "Show all trainings",hello: req.hello });
 };
 // @desc   Get single training
 // @route  GET /api/trainings/:id
