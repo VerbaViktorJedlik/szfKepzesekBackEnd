@@ -4,31 +4,25 @@ const oneSideModel = require("../models/model_1");
 
 const router = express.Router();
 
-router.post("/", async (req, res) => {
-  const data = new nSideModel({
-    name: req.body.name,
-    foreignKey: req.body.foreignKey,
-  });
+router.get('/trainings', (req, res) => {
+  res.status(200).json({ success: true, msg: 'Show all trainings ' })
+})
 
- 
-});
+router.get('/trainings/:id', (req, res) => {
+  res.status(200).json({ success: true, msg: `Get training ${req.params.id}` })
+})
 
-router.get("/", async (req, res) => {
-  
-});
+router.post('/trainings', (req, res) => {
+  res.status(200).json({ success: true, msg: 'Create new training' })
+})
 
-router.get("/:id", async (req, res) => {
-  
-});
+router.put('/trainings/:id', (req, res) => {
+  res.status(200).json({ success: true, msg: `Update training ${req.params.id}` })
+})
 
-//Update by ID Method
-router.patch("/:id", async (req, res) => {
-  
-});
+router.delete('/trainings/:id', (req, res) => {
+  res.status(200).json({ success: true, msg: `Delete training ${req.params.id}` })
+})
 
-//Delete by ID Method
-router.delete("/:id", async (req, res) => {
-  
-});
 
 module.exports = router;
